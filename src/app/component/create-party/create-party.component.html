@@ -1,0 +1,167 @@
+<h2 mat-dialog-title>Add Party</h2>
+
+<div class="p-4">
+    <form [formGroup]="createForm" (submit)="createParty()">
+        <div class="row col-md-12">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Name</mat-label>
+                    <input matInput autocomplete="off" formControlName="name">
+                    <mat-error *ngIf="!createForm.controls['name'].valid && createForm.controls['name'].touched">
+                        {{ getErrorMessage('name', 'Name') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput autocomplete="off" formControlName="company_name">
+                    <mat-error
+                        *ngIf="!createForm.controls['company_name'].valid && createForm.controls['company_name'].touched">
+                        {{ getErrorMessage('company_name', 'Company Name') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Mobile Number</mat-label>
+                    <input matInput autocomplete="off" formControlName="mobile_no">
+                    <mat-error *ngIf="!createForm.controls['mobile_no'].valid && createForm.controls['mobile_no'].touched">
+                        {{ getErrorMessage('mobile_no', 'Mobile Number') }} </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row col-md-12 mt-4">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Telephone Number</mat-label>
+                    <input matInput autocomplete="off" formControlName="telephone_no">
+                    <mat-error
+                        *ngIf="!createForm.controls['telephone_no'].valid && createForm.controls['telephone_no'].touched">
+                        {{ getErrorMessage('telephone_no', 'Telephone Number') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Whatsapp Number</mat-label>
+                    <input matInput autocomplete="off" formControlName="whatsapp_no">
+                    <mat-error
+                        *ngIf="!createForm.controls['whatsapp_no'].valid && createForm.controls['whatsapp_no'].touched">
+                        {{ getErrorMessage('whatsapp_no', 'Whatsapp Number') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Email</mat-label>
+                    <input matInput autocomplete="off" formControlName="email">
+                    <mat-error *ngIf="!createForm.controls['email'].valid && createForm.controls['email'].touched">
+                        {{ getErrorMessage('email', 'Email') }} </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="row col-md-12 mt-4">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Credit Limit</mat-label>
+                    <input matInput autocomplete="off" formControlName="credit_limit">
+                    <mat-error
+                        *ngIf="!createForm.controls['credit_limit'].valid && createForm.controls['credit_limit'].touched">
+                        {{ getErrorMessage('credit_limit', 'Credit Limit') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="example-form-field">
+                    <mat-label>Date Of Birth</mat-label>
+                    <input matInput [matDatepicker]="datepicker" formControlName="date_of_birth">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker> </mat-datepicker>
+    
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="example-form-field">
+                    <mat-label>Anniversary Date</mat-label>
+                    <input matInput [matDatepicker]="datepicker1" formControlName="anniversary_date">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="datepicker1"></mat-datepicker-toggle>
+                    <mat-datepicker #datepicker1> </mat-datepicker>
+                </mat-form-field>
+            </div>
+        </div>
+    
+    
+        <div class="row col-md-12 mt-4">
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>GSTIN</mat-label>
+                    <input matInput autocomplete="off" formControlName="gstin">
+                    <mat-error *ngIf="!createForm.controls['gstin'].valid && createForm.controls['gstin'].touched">
+                        {{ getErrorMessage('gstin', 'GSTIN') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Pan Number</mat-label>
+                    <input matInput autocomplete="off" formControlName="pan_no">
+                    <mat-error *ngIf="!createForm.controls['pan_no'].valid && createForm.controls['pan_no'].touched">
+                        {{ getErrorMessage('pan_no', 'Pan Number') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>GSTIN</mat-label>
+                    <input matInput autocomplete="off" formControlName="gstin">
+                    <mat-error *ngIf="!createForm.controls['gstin'].valid && createForm.controls['gstin'].touched">
+                        {{ getErrorMessage('gstin', 'GSTIN') }} </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    
+        <div class="row col-md-12 mt-4">
+    
+            
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Remark</mat-label>
+                    <textarea matInput autocomplete="off" formControlName="remark"></textarea>
+                    <mat-error *ngIf="!createForm.controls['remark'].valid && createForm.controls['remark'].touched">
+                        {{ getErrorMessage('remark', 'Remark') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Address</mat-label>
+                    <textarea matInput autocomplete="off" formControlName="address"></textarea>
+                    <mat-error *ngIf="!createForm.controls['address'].valid && createForm.controls['address'].touched">
+                        {{ getErrorMessage('address', 'Address') }} </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field appearance="outline" class="form-field">
+                    <mat-label>Bank</mat-label>
+                    <textarea matInput autocomplete="off" formControlName="bank"></textarea>
+                    <mat-error *ngIf="!createForm.controls['bank'].valid && createForm.controls['bank'].touched">
+                        {{ getErrorMessage('bank', 'Bank') }} </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    
+        <div class="row col-md-12 mt-4">
+            <div class="col-md-4">
+            <mat-checkbox formControlName="login_access">
+                Login Access
+            </mat-checkbox>
+            </div>
+            <div class="col-md-4">
+            <mat-checkbox formControlName="apply_tds">
+                Apply TDS
+            </mat-checkbox>
+            </div>
+        </div>
+    </form>
+    
+</div>
+<div class="d-flex justify-content-end mb-4">
+    <button mat-raised-button color="warn" (click)="cancel()">Cancel</button>
+    <button style="margin-left: 2%;" mat-raised-button color="primary" (click)="createParty()">Submit</button>
+
+</div>

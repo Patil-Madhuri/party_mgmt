@@ -1,0 +1,32 @@
+<form [formGroup]="loginForm" (submit)="login()">
+  <div class="login-div">
+    <mat-card class="login-card">
+      <div>
+        <div>
+          <h3>Login</h3>
+         
+        </div>
+        <div class="form-div">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Username</mat-label>
+            <input matInput autocomplete="off" formControlName="username">
+            <mat-error *ngIf="!loginForm.controls['username'].valid && loginForm.controls['username'].touched">
+              {{ getErrorMessage('username', 'Username') }} </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-div">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'text' : 'password'" autocomplete="off" formControlName="password">
+            <mat-error *ngIf="!loginForm.controls['password'].valid && loginForm.controls['password'].touched">
+              {{ getErrorMessage('password', 'Password') }} </mat-error>
+          </mat-form-field>
+        </div>
+        <div class="button-div">
+          <button mat-button type="submit" class="login-button">Login</button>
+        </div>
+      </div>
+
+    </mat-card>
+  </div>
+</form>
